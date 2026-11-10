@@ -80,6 +80,20 @@ flowchart LR
 
 <sub>2026-11-10에 윈도 크롬에서 개인 모드로 한 번씩 실행한 결과예요. 일반 문서 전체의 정확도를 보장하는 수치는 아니에요. 인사등록서 예시에서는 `가상사원 가온`처럼 라벨 뒤 이름이 4자를 넘으면 일부만 가려졌고, 시·도로 시작하지 않는 주소(`가상시 …`)는 찾지 못했어요. 아래 [이런 것은 찾지 못해요](#이런-것은-찾지-못해요)에 적힌 한계와 같아요. 이런 부분은 **영역 추가**로 직접 가려 주세요.</sub>
 
+## 내가 맡은 부분
+
+5명이 함께 만든 해커톤 프로젝트이고, 저([seolcw](https://github.com/seolcw))는 PR 8개(모두 병합)와 커밋 23개를 맡았어요. 위 예시에 나온 **스캔 PDF 글자 인식**과 **복원할 수 없는 PDF 내보내기**가 제가 만든 부분이에요.
+
+| 영역 | 한 일 | 이슈 · PR |
+|---|---|---|
+| 스캔 PDF 글자 인식 | PP-OCRv5 한국어 경량 모델을 브라우저 작업자에서 실행해 스캔 페이지의 글자와 위치를 읽고, 공통 탐지 규칙에 걸린 영역을 페이지 좌표로 바꿔 가림. 모델 다운로드 진행률, 회전 페이지, 처리 취소 포함 | [#20](https://github.com/sbychul/Garim/issues/20) · [PR #29](https://github.com/sbychul/Garim/pull/29), [PR #50](https://github.com/sbychul/Garim/pull/50) |
+| 가린 PDF 내보내기 | 가린 페이지를 그림으로 다시 만들어 새 PDF로 저장해, 내려받은 파일에 원문 글자 층이 남지 않게 함 | [#5](https://github.com/sbychul/Garim/issues/5) · [PR #19](https://github.com/sbychul/Garim/pull/19) |
+| 기업 모드 강제 가림 | 직원·관리자는 자동 탐지 항목을 해제할 수 없게 하고, 화면과 복사·내려받기 결과에 같은 대상을 적용 | [#36](https://github.com/sbychul/Garim/issues/36) · [PR #52](https://github.com/sbychul/Garim/pull/52) |
+| 탐지 기록 저장 | 기업 사용자가 마스킹을 완료하면 항목별 건수만 한 번 저장하고, 중복 저장과 자동 재시도를 막음 | [#37](https://github.com/sbychul/Garim/issues/37) · [PR #59](https://github.com/sbychul/Garim/pull/59) |
+| 관리자 통계 화면 | 사람별 순위, 사람×항목 표, 항목별 합계를 실제 기록으로 조회 | [#38](https://github.com/sbychul/Garim/issues/38) · [PR #51](https://github.com/sbychul/Garim/pull/51) |
+| 탐지 기준과 가상 샘플 | 항목별 탐지 기준과 경계 사례 정리, 글자판 PDF 20개·스캔판 PDF 8개 등 가상 시험 자료 제작 | [#9](https://github.com/sbychul/Garim/issues/9) · [PR #27](https://github.com/sbychul/Garim/pull/27) |
+| 항목별 건수 집계 | 탐지 결과를 항목별 건수로 세는 함수 (기록 저장에 사용) | [#3](https://github.com/sbychul/Garim/issues/3) · [PR #26](https://github.com/sbychul/Garim/pull/26) |
+
 ## 개인 모드와 기업 모드
 
 | | 개인 모드 | 기업 모드 |
